@@ -1,4 +1,4 @@
-import 'package:carrental/Firebase/firebase.dart';
+import 'package:carrental/firebase/firebase.dart';
 import 'package:flutter/material.dart';
 
 class Sample extends StatefulWidget {
