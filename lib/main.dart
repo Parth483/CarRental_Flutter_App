@@ -1,4 +1,5 @@
-import 'package:carrental/views/sample.dart';
+import 'package:carrental/Views/presentation/car_list_page/car_list_screen.dart';
+import 'package:carrental/Views/presentation/onboardingpage/onboardingpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const Sample(),
+          home: Onboardingpage(),
         );
       },
     );

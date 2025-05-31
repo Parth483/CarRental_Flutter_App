@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xFF1F1B20);
+const Color primaryColor = Color(0xff2C2B34);
 const Color secondaryColor = Color(0xFFE10600);
 const Color lightPrimaryColor = Color(0xFFF5F1D8);
 const Color secondintroScreen = Color(0xFFF7D9D9);
@@ -8,6 +8,9 @@ const Color thirdintroScreen = Color(0xFFF6E1D8);
 const Color thirdColor = Color(0xFF39A2AB);
 const Color fourthColor = Color(0xFFAB3F36);
 const Color textfiledColor = Color(0xFFE2E2E2);
+
+const Color carCardColor = Color(0xffF3F3F3);
+const Color black12 = Colors.black12;
 
 const Color gradientEffect2Light = Color(0xFF9A50C9); // Light Purple
 const Color gradientEffect2Mid = Color(0xFF581958); // Deep Purple
