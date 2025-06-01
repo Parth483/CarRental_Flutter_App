@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:carrental/Views/presentation/map_detail_page/mapdetailpage.dart';
 import 'package:carrental/components/parentwidget/customparentbackground.dart';
 import 'package:carrental/components/toolbar.dart/toolbar.dart';
@@ -10,9 +12,45 @@ import 'package:carrental/models/more_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class CarDetailPage extends StatelessWidget {
+class CarDetailPage extends StatefulWidget {
   final Car car;
   const CarDetailPage({super.key, required this.car});
+
+  @override
+  State<CarDetailPage> createState() => _CarDetailPageState();
+}
+
+class _CarDetailPageState extends State<CarDetailPage>
+    with SingleTickerProviderStateMixin {
+  AnimationController? _animationController;
+  Animation<double>? _animation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _animationController = AnimationController(
+      duration: Duration(seconds: 3),
+      vsync: this,
+    );
+
+    _animation = Tween<double>(
+      begin: 1.0,
+      end: 1.5,
+    ).animate(_animationController!)..addListener(() {
+      setState(() {});
+    });
+
+    _animationController!.forward();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    _animationController!.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +72,10 @@ class CarDetailPage extends StatelessWidget {
           getDynamicSizedBox(height: 2.h),
           CarCard(
             car: Car(
-              model: car.model,
-              distance: car.distance,
-              fuelCapacity: car.fuelCapacity,
-              pricePerHour: car.pricePerHour,
+              model: widget.car.model,
+              distance: widget.car.distance,
+              fuelCapacity: widget.car.fuelCapacity,
+              pricePerHour: widget.car.pricePerHour,
             ),
           ),
           getDynamicSizedBox(height: 2.h),
@@ -82,7 +120,7 @@ class CarDetailPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Mapdetailpage(car: car),
+                          builder: (context) => Mapdetailpage(car: widget.car),
                         ),
                       );
                     },
@@ -90,10 +128,10 @@ class CarDetailPage extends StatelessWidget {
                       height: 22.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                          image: AssetImage(Assets.maps),
-                          fit: BoxFit.cover,
-                        ),
+                        // image: DecorationImage(
+                        //   image: AssetImage(Assets.maps),
+                        //   fit: BoxFit.cover,
+                        // ),
                         boxShadow: [
                           BoxShadow(
                             color: black12,
@@ -101,6 +139,14 @@ class CarDetailPage extends StatelessWidget {
                             blurRadius: 10,
                           ),
                         ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Transform.scale(
+                          scale: _animation!.value,
+                          alignment: Alignment.center,
+                          child: Image.asset(Assets.maps, fit: BoxFit.cover),
+                        ),
                       ),
                     ),
                   ),
@@ -118,28 +164,28 @@ class CarDetailPage extends StatelessWidget {
               children: [
                 MoreCard(
                   car: Car(
-                    model: '${car.model}-1',
-                    distance: car.distance + 100,
-                    fuelCapacity: car.fuelCapacity + 100,
-                    pricePerHour: car.pricePerHour + 10,
+                    model: '${widget.car.model}-1',
+                    distance: widget.car.distance + 100,
+                    fuelCapacity: widget.car.fuelCapacity + 100,
+                    pricePerHour: widget.car.pricePerHour + 10,
                   ),
                 ),
                 getDynamicSizedBox(height: 1.h),
                 MoreCard(
                   car: Car(
-                    model: '${car.model}-2',
-                    distance: car.distance + 200,
-                    fuelCapacity: car.fuelCapacity + 200,
-                    pricePerHour: car.pricePerHour + 20,
+                    model: '${widget.car.model}-2',
+                    distance: widget.car.distance + 200,
+                    fuelCapacity: widget.car.fuelCapacity + 200,
+                    pricePerHour: widget.car.pricePerHour + 20,
                   ),
                 ),
                 getDynamicSizedBox(height: 1.h),
                 MoreCard(
                   car: Car(
-                    model: '${car.model}-3',
-                    distance: car.distance + 300,
-                    fuelCapacity: car.fuelCapacity + 300,
-                    pricePerHour: car.pricePerHour + 30,
+                    model: '${widget.car.model}-3',
+                    distance: widget.car.distance + 300,
+                    fuelCapacity: widget.car.fuelCapacity + 300,
+                    pricePerHour: widget.car.pricePerHour + 30,
                   ),
                 ),
               ],
