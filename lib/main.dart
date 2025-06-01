@@ -1,13 +1,12 @@
-import 'package:carrental/Views/presentation/car_detail_page/car_detail_page.dart';
-import 'package:carrental/Views/presentation/map_detail_page/mapdetailpage.dart';
+import 'package:carrental/Views/presentation/Injuction_container/injuction_container.dart';
 import 'package:carrental/Views/presentation/onboardingpage/onboardingpage.dart';
-import 'package:carrental/data/models/Car.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  initInjection();
 
   await Firebase.initializeApp();
   runApp(const MyApp());
