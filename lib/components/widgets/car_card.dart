@@ -2,7 +2,7 @@ import 'package:carrental/Views/presentation/car_detail_page/car_detail_page.dar
 import 'package:carrental/components/toolbar.dart/toolbar.dart';
 import 'package:carrental/configs/assets_constant.dart';
 import 'package:carrental/configs/colors_constant.dart';
-import 'package:carrental/models/Car.dart';
+import 'package:carrental/data/models/Car.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 

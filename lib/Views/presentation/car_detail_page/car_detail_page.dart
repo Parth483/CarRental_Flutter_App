@@ -7,8 +7,8 @@ import 'package:carrental/components/widgets/car_card.dart';
 import 'package:carrental/configs/assets_constant.dart';
 import 'package:carrental/configs/colors_constant.dart';
 import 'package:carrental/configs/string_constant.dart';
-import 'package:carrental/models/Car.dart';
-import 'package:carrental/models/more_card.dart';
+import 'package:carrental/data/models/Car.dart';
+import 'package:carrental/components/widgets/more_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
