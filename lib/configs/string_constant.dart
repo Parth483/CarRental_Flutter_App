@@ -12,3 +12,13 @@ class CarListconst {
 class CarDetailconst {
   static const String information = 'Information';
 }
+
+class MapDetailconst {
+  static const feature = 'Features';
+  static const diesel = 'Diesel';
+  static const commonRail = 'Common Rail';
+  static const acceleration = 'Acceleration';
+  static const kms = '0 - 100km/s';
+  static const cold = 'Cold';
+  static const tempControl = 'Temp Control';
+}

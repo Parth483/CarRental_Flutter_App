@@ -1,3 +1,4 @@
+import 'package:carrental/Views/presentation/map_detail_page/mapdetailpage.dart';
 import 'package:carrental/components/parentwidget/customparentbackground.dart';
 import 'package:carrental/components/toolbar.dart/toolbar.dart';
 import 'package:carrental/components/widgets/car_card.dart';
@@ -76,21 +77,31 @@ class CarDetailPage extends StatelessWidget {
                 ),
                 getDynamicSizedBox(width: 4.w),
                 Expanded(
-                  child: Container(
-                    height: 22.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                        image: AssetImage(Assets.maps),
-                        fit: BoxFit.cover,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: black12,
-                          spreadRadius: 5,
-                          blurRadius: 10,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Mapdetailpage(car: car),
                         ),
-                      ],
+                      );
+                    },
+                    child: Container(
+                      height: 22.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          image: AssetImage(Assets.maps),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: black12,
+                            spreadRadius: 5,
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
