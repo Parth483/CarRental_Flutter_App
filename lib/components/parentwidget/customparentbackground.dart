@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CustomParentScaffold extends StatelessWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
   final Widget body;
+  final PreferredSizeWidget? appbar;
   final Widget? floatingActionButton;
   final Widget? bottomNavigationBar;
   final Drawer? drawer;
   final bool isExtendedBody;
+  final bool extendBodyBehindAppBar;
   final bool resizeToAvoidBottomInset;
   final Future<bool> Function()? onWillPop;
 
@@ -14,12 +16,14 @@ class CustomParentScaffold extends StatelessWidget {
     super.key,
     this.scaffoldKey,
     required this.body,
+    this.appbar,
     this.floatingActionButton,
     this.bottomNavigationBar,
     this.drawer,
     this.isExtendedBody = false,
     this.resizeToAvoidBottomInset = true,
     this.onWillPop,
+    this.extendBodyBehindAppBar = false,
   });
 
   @override
@@ -44,6 +48,8 @@ class CustomParentScaffold extends StatelessWidget {
                   bottomNavigationBar: bottomNavigationBar,
                   resizeToAvoidBottomInset: resizeToAvoidBottomInset,
                   body: body,
+                  appBar: appbar,
+                  extendBodyBehindAppBar: extendBodyBehindAppBar,
                 )
                 : SafeArea(
                   child: Scaffold(
@@ -53,6 +59,8 @@ class CustomParentScaffold extends StatelessWidget {
                     bottomNavigationBar: bottomNavigationBar,
                     resizeToAvoidBottomInset: resizeToAvoidBottomInset,
                     body: body,
+                    appBar: appbar,
+                    extendBodyBehindAppBar: extendBodyBehindAppBar,
                   ),
                 ),
       ),

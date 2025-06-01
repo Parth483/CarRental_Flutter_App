@@ -3,18 +3,13 @@ import 'package:carrental/utils/helper.dart';
 import 'package:flutter/services.dart';
 
 class Statusbar {
-
-
-  void trasparentStatusbar() {
+  void trasparentStatusbar({isblack = true}) {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        statusBarIconBrightness:
-            isDarkMode() ? Brightness.light : Brightness.dark,
-        statusBarColor: isDarkMode() ? darkBackgroundColor : transparent,
-        statusBarBrightness: isDarkMode() ? Brightness.dark : Brightness.light,
+        statusBarIconBrightness: isblack ? Brightness.dark : Brightness.light,
+        statusBarColor: isblack ? transparent : darkBackgroundColor,
+        statusBarBrightness: isblack ? Brightness.dark : Brightness.light,
       ),
     );
   }
-
-  
 }

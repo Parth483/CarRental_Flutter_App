@@ -13,6 +13,7 @@ const Color textfiledColor = Color(0xFFE2E2E2);
 const Color carCardColor = Color(0xffF3F3F3);
 const Color black12 = Colors.black12;
 const Color black54 = Colors.black54;
+const Color black38 = Colors.black38;
 const Color greyish = Color(0xffF3F3F3);
 const Color blackcard = Color(0xff212020);
 //this app

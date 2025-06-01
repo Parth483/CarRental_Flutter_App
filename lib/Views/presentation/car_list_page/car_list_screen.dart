@@ -44,7 +44,7 @@ class CarListScreen extends StatelessWidget {
       body: Column(
         children: [
           getDynamicSizedBox(height: 2.h),
-          getappbar(title: CarListconst.chooseCar),
+          getCenterappbar(title: CarListconst.chooseCar),
           getDynamicSizedBox(height: 2.h),
           Expanded(
             child: ListView.builder(
