@@ -1,4 +1,4 @@
-import 'package:carrental/Views/presentation/car_list_page/car_list_screen.dart';
+import 'package:carrental/Views/presentation/car_detail_page/car_detail_page.dart';
 import 'package:carrental/Views/presentation/onboardingpage/onboardingpage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

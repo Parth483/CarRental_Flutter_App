@@ -9,8 +9,13 @@ const Color thirdColor = Color(0xFF39A2AB);
 const Color fourthColor = Color(0xFFAB3F36);
 const Color textfiledColor = Color(0xFFE2E2E2);
 
+//this app
 const Color carCardColor = Color(0xffF3F3F3);
 const Color black12 = Colors.black12;
+const Color black54 = Colors.black54;
+const Color greyish = Color(0xffF3F3F3);
+const Color blackcard = Color(0xff212020);
+//this app
 
 const Color gradientEffect2Light = Color(0xFF9A50C9); // Light Purple
 const Color gradientEffect2Mid = Color(0xFF581958); // Deep Purple

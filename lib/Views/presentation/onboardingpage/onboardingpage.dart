@@ -57,7 +57,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      OnboardingString.primium,
+                      Onboardingconst.primium,
                       style: TextStyle(
                         color: white,
                         fontSize: 25.sp,
@@ -66,7 +66,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
                     ),
                     getDynamicSizedBox(height: 2.h),
                     Text(
-                      OnboardingString.rental,
+                      Onboardingconst.rental,
                       style: TextStyle(color: white, fontSize: 16.sp),
                     ),
                     getDynamicSizedBox(height: 2.h),
@@ -82,7 +82,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
                             ),
                           );
                         },
-                        OnboardingString.letsGo,
+                        Onboardingconst.letsGo,
                         validate: true,
                       ),
                     ),

@@ -44,19 +44,14 @@ class CarListScreen extends StatelessWidget {
       body: Column(
         children: [
           getDynamicSizedBox(height: 2.h),
-          getappbar(title: CarListString.chooseCar),
+          getappbar(title: CarListconst.chooseCar),
           getDynamicSizedBox(height: 2.h),
           Expanded(
             child: ListView.builder(
               // physics: BouncingScrollPhysics(),
               itemCount: cars.length,
               itemBuilder: (context, index) {
-                return CarCard(
-                  function: () {
-                    print('Tapped');
-                  },
-                  car: cars[index],
-                );
+                return CarCard(car: cars[index]);
               },
             ),
           ),

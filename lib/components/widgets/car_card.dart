@@ -1,3 +1,4 @@
+import 'package:carrental/Views/presentation/car_detail_page/car_detail_page.dart';
 import 'package:carrental/components/toolbar.dart/toolbar.dart';
 import 'package:carrental/configs/assets_constant.dart';
 import 'package:carrental/configs/colors_constant.dart';
@@ -7,14 +8,17 @@ import 'package:sizer/sizer.dart';
 
 class CarCard extends StatelessWidget {
   final Car car;
-  final Function function;
-  const CarCard({super.key, required this.car, required this.function});
+
+  const CarCard({super.key, required this.car});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        function();
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => CarDetailPage(car: car)),
+        );
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 5.w, vertical: 1.h),
@@ -32,7 +36,7 @@ class CarCard extends StatelessWidget {
             Image.asset(Assets.car),
             Text(
               car.model,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
             ),
             getDynamicSizedBox(height: 2.h),
             Row(
