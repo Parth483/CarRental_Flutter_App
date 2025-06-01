@@ -1,11 +1,12 @@
 import 'package:carrental/components/toolbar.dart/toolbar.dart';
+import 'package:carrental/configs/assets_constant.dart';
 import 'package:carrental/configs/colors_constant.dart';
 import 'package:carrental/configs/string_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
-getCenterappbar({title}) {
+Widget getCenterappbar({title}) {
   return Center(
     child: Text(
       title,
@@ -14,7 +15,7 @@ getCenterappbar({title}) {
   );
 }
 
-getleftsidebackbtn({required backFunction, required title}) {
+Widget getleftsidebackbtn({required backFunction, required title}) {
   return Container(
     height: 10.h,
     decoration: BoxDecoration(color: transparent),
@@ -188,6 +189,11 @@ Widget carDetailPage(
               ],
             ),
           ),
+        ),
+        Positioned(
+          top: 10.h,
+          right: 2.w,
+          child: Image.asset(Assets.whiteCar, height: 12.h),
         ),
       ],
     ),

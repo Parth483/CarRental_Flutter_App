@@ -29,7 +29,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
     Statusbar().trasparentStatusbar();
     return CustomParentScaffold(
       onWillPop: () {
-        return Future.value(true);
+        return Future.value(false);
       },
 
       body: Container(
@@ -75,12 +75,19 @@ class _OnboardingpageState extends State<Onboardingpage> {
                       child: getFormButton(
                         context,
                         () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => CarListScreen(),
                             ),
+                            (route) => false,
                           );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => CarListScreen(),
+                          //   ),
+                          // );
                         },
                         Onboardingconst.letsGo,
                         validate: true,
